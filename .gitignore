@@ -4,5 +4,4 @@ __pycache__/
 *.pyo
 *.pyd
 .DS_Store
-confusion_matrix.png
 .pytest_cache/
