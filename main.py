@@ -8,10 +8,9 @@ from typing import Dict
 import pandas as pd
 from sklearn.base import BaseEstimator
 
-from src.data_loader import DataConfig, IrisDataLoader
-from src.evaluator import EvalConfig, ModelEvaluator
-from src.trainer import ModelTrainer, TrainConfig
-
+from src.data_loader import IrisDataLoader
+from src.evaluator import ModelEvaluator
+from src.trainer import ModelTrainer
 
 def setup_logging() -> None:
     """Configure application-wide logging."""
