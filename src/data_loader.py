@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+from src.config import DataConfig
 from typing import Tuple
 
 import pandas as pd
@@ -9,20 +9,6 @@ from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 
 logger = logging.getLogger(__name__)
-
-
-@dataclass(frozen=True)
-class DataConfig:
-    """Configuration for dataset loading and splitting.
-
-    Attributes:
-        test_size: Fraction of samples used for the test split.
-        random_state: Random seed used for reproducible splitting.
-        stratify: Whether to stratify the split by the target label.
-    """
-    test_size: float = 0.2
-    random_state: int = 42
-    stratify: bool = True
 
 
 class IrisDataLoader:

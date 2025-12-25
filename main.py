@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import asdict, dataclass
-from pathlib import Path
+from dataclasses import asdict
+from src.config import AppConfig
 from typing import Dict
 
 import pandas as pd
@@ -11,14 +11,6 @@ from sklearn.base import BaseEstimator
 from src.data_loader import DataConfig, IrisDataLoader
 from src.evaluator import EvalConfig, ModelEvaluator
 from src.trainer import ModelTrainer, TrainConfig
-
-
-@dataclass(frozen=True)
-class AppConfig:
-    """Top-level application configuration."""
-    data: DataConfig = DataConfig()
-    train: TrainConfig = TrainConfig()
-    eval: EvalConfig = EvalConfig(output_dir=Path("."))
 
 
 def setup_logging() -> None:

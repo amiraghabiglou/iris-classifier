@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+from src.config import TrainConfig
 from typing import Dict
 
 import pandas as pd
@@ -10,18 +10,6 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 
 logger = logging.getLogger(__name__)
-
-
-@dataclass(frozen=True)
-class TrainConfig:
-    """Training hyperparameters for the two required models.
-
-    Attributes:
-        logreg_max_iter: Maximum iterations for LogisticRegression.
-        random_state: Random seed for reproducible DecisionTree behavior.
-    """
-    logreg_max_iter: int = 1000
-    random_state: int = 42
 
 
 class ModelTrainer:

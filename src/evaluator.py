@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from dataclasses import dataclass
+from src.config import EvalConfig
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
@@ -13,19 +13,6 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 logger = logging.getLogger(__name__)
 
-
-@dataclass(frozen=True)
-class EvalConfig:
-    """Evaluation configuration.
-
-    Attributes:
-        output_dir: Directory where plots will be saved.
-        confusion_matrix_filename: Filename for the confusion matrix PNG.
-        class_names: Ordered class names corresponding to label ids.
-    """
-    output_dir: Path = Path(".")
-    confusion_matrix_filename: str = "confusion_matrix.png"
-    class_names: Tuple[str, str, str] = ("setosa", "versicolor", "virginica")
 
 
 class ModelEvaluator:
