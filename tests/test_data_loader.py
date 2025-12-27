@@ -25,3 +25,6 @@ class TestIrisDataLoader(unittest.TestCase):
         # With stratify=True, each class should appear in both splits for Iris sizes.
         self.assertEqual(set(y_train.unique()), {0, 1, 2})
         self.assertEqual(set(y_test.unique()), {0, 1, 2})
+        counts = y_train.value_counts()
+        self.assertEqual(counts[0], counts[1])
+        self.assertEqual(counts[1], counts[2])
